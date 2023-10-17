@@ -1,0 +1,91 @@
+USAGE: test #training #test
+NETWORK_USED: yolov8 #yolov8 #mediapipe
+STATION: 2 #1 #2
+
+TRAINING_YOLO:
+  EPOCHS: 100 #100
+  BATCH_SIZE: 6 #6
+  MODEL_SIZE: l #l
+  VAL_PERCENTAGE: 0.2 #0.2
+  SEED: 42 #42
+  IMG_SIZE: 640 #640
+  SAVE_PERIOD: 10
+  DEVICE: 0
+  WORKERS: 2
+  PATIENCE: 0 #0
+  DROPOUT: 0.0 #0.0
+  OPTIMIZER: SGD #SGD
+  MODELS_TRAIN_DICT:
+    '65162': 0
+    '65179': 1
+    '65533': 2
+    '65545': 3
+    '66660': 4
+    '66855': 5
+    '66864': 6
+    '66884': 7
+    '77854': 8
+    '77864': 9
+    'F23': 10
+    'V1B': 11
+  CONFIDENCE_AUTOLABELING: 90
+  GAMMA_1: 0.8
+  GAMMA_2: 1.2
+  ONLY_TRAINING: False
+
+TESTING_YOLO:
+  WEIGHTS: old #old #new
+
+  PATHS: [
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\77864\webb\d1,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\77864\webb\d2,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\77854,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Testing_Images_66864,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\66864\webb\d1,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\66864\webb\d2,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\V1\d1,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\V1\d2,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\66884\d1,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\66884\d2,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\F23,
+    #C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Testing_Images_F23,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Undetected_15092023
+  ]
+  PATHS_CAM_1: [
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_1\66864,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_1\77864,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_1\F23,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_1\V1B
+  ]
+  PATHS_CAM_2: [
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\66864,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\66884,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\77854,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\77864,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\F23,
+    C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\testing_images\Camera_2\V1B
+  ]
+  CONF_LIMIT: 0.75
+  IOU_LIMIT: 0.25
+  DEVICE: 0
+
+  TEST_ON_PREPROCESSED: True
+  HISTOGRAM_EQUALIZATION: True
+  SET_GAMMA: True 
+  GAMMA: 0.8 # più è basso, meglio è per 66864; più è alto, meglio è per F23 e per 66884
+  SET_GAIN: False
+  GAIN: 1.2 # tra 1.1 e 1.5
+  SET_BRIGHTNESS: False
+  BRIGHTNESS: 2.3 # fino a 2.5 cambia poco, da 3 in poi peggiora sempre
+  SET_CONTRAST: False
+  CONTRAST: 1.5 # peggiora sempre
+  SET_SHARPNESS: False
+  SHARPNESS: 1 # peggiora sempre
+  SET_SATURATION: False
+  SATURATION: 1.5 # peggiora sempre
+  ENABLE_RESIZING: True
+  RESIZED_WIDTH: 640 #1280 #640
+  RESIZED_HEIGHT: 480 #960 #480
+
+  ENABLE_P_R_COMPUTATION: True
+  ENABLE_TIME_COMPUTATION: True

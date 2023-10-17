@@ -1,0 +1,16 @@
+names:
+  0: '65162'
+  1: '65179'
+  2: '65533'
+  3: '65545'
+  4: '66660'
+  5: '66855'
+  6: '66864'
+  7: '66884'
+  8: '77854'
+  9: '77864'
+  10: F23
+  11: V1B
+path: C:\Users\GEFIT\Desktop\Workspace\02-PYVISIND\pyvis-ind\pyvis-ind\test_on_images\YOLO\training_images\all_models_folder
+train: images\train
+val: images\val
